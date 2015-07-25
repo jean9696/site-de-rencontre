@@ -1,0 +1,400 @@
+/*VARIABLES*/
+
+
+@main-color: #FF0042;
+@second-color: #ECEDDC;
+@important-color: #FF6102;
+@btn-color: darken(@main-color, 10%);
+
+
+
+
+@navbar-background: lightgrey;
+@image-banniere: url("../images/pont_des_arts.jpg") no-repeat center center fixed;
+
+
+@text-color: white;
+@text-color-footer: white;
+
+
+
+
+@font-face {
+    font-family: 'main-font';
+    src: url('fonts/police.eot') format('eot'),
+         url('fonts/police.woff') format('woff'),
+         url('fonts/police.ttf') format('truetype'),
+         url('fonts/police.svg') format('svg');
+}
+
+
+@font-face {
+    font-family: 'nav-font';
+    src: url('fonts/nav.eot') format('eot'),
+         url('fonts/nav.woff') format('woff'),
+         url('fonts/nav.ttf') format('truetype'),
+         url('fonts/nav.svg') format('svg');
+}
+
+
+/*CSS*/
+
+body{ 
+	overflow-x: hidden; /*C'est degeulasse mais je trouve pas le bug...*/
+}
+
+.navbar{
+	padding-top: 10px;
+	height: 100px;
+	/*On corrige les trucs de bootstrap histoire de faire ce qu'on veut*/
+	background-color: fadeout(black, 100%);/*opacité à 0%*/
+	border-color: fadeout(black, 100%);
+}
+
+.navbar img{
+	height: 100px;
+}
+
+
+
+.navbar.past-main {
+    background: url("../images/triangular.png") center center fixed;/*;/*fond quand on descend*/
+    height: 80px;
+    -webkit-animation-name: reduireOpacite; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+    animation-name: reduireOpacite;
+    animation-duration: 0.5s;
+    box-shadow: 0px 5px 5px fadeout(#656565, 40%);
+}
+
+.navbar.past-main img{
+	height: 50px;
+	-webkit-animation-name: retrecirLogo; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+    animation-name: retrecirLogo;
+    animation-duration: 0.5s;
+}
+
+
+
+.btn-inscription{
+	display: none;
+}
+
+.btn-inscription.past-main{
+	display: inline;
+}
+
+
+.banniere{
+
+	padding-top: 175px;
+	min-height: 625px;
+	max-height: 4000px;/*quand c'est tout serré faut adapter*/
+
+	background: @image-banniere; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: @text-color;
+}
+
+.inscription{
+
+	margin: 20px ;
+	padding: 15px;
+	background-color: fadeout(@main-color, 20%);/*opacité à 80%*/
+	border-radius: 10px;
+
+}
+
+.section{
+	min-height: 500px;
+	max-height: 4000px;
+	padding-top: 50px;
+	text-align: justify;
+}
+
+.footer{
+	padding-top: 75px;
+	padding-bottom: 25px;
+	text-align: center;
+	color:@text-color-footer;
+}
+
+
+.footer-background{
+	background-color:#556;
+	background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+	linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+	linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+	linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+	linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+	linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+	background-size:80px 140px;
+	background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+
+}
+
+
+.background-style{
+	/*http://lea.verou.me/css3patterns/*/
+	background: 
+	linear-gradient(135deg, @second-color 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, @second-color 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, @second-color 25%, transparent 25%),
+	linear-gradient(45deg, @second-color 25%, transparent 25%);	
+	background-size: 100px 100px;
+	background-color: lighten(@second-color, 10%);
+
+}
+
+
+.fleche-back-top{
+	position: fixed;
+	top: 90%;
+	left:90%;
+	opacity: 0.8;	
+	display: none;
+}
+
+
+
+.fleche-back-top.past-main{
+	display: inline;
+}
+
+.fleche-back-top:hover{
+        opacity: 1;	
+}
+
+
+.table-offres {
+	text-align: center;
+	margin-bottom: 50px;
+	box-shadow: 5px 5px 5px #656565;
+	border-radius: 5px;
+}
+
+.table-offres td{
+	padding: 10px;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: darken(@second-color, 20%);
+}
+
+.table-offres th{
+	font-family: 'main-font';
+	padding: 10px;
+	color: white;
+	text-align: center;
+	font-size: 45px;
+}
+
+
+.table-offres-titre-premium{
+	background: @important-color;
+
+}
+
+.table-offres-titre-gratuit{
+	background: @main-color;
+}
+
+
+.main-text{
+	font-family: 'main-font';
+	font-size: 60px;
+	font-weight: bold;
+}
+
+
+.error{
+	font-family: 'main-font';
+	font-size: 80px;
+	font-weight: bold;
+	padding-top: 200px; 
+	text-align: center;
+}
+
+.error a{
+	font-size: 40px;
+}
+
+
+.carousel{
+	background-color:@main-color;
+	text-align: center;
+}
+
+.presentation-etapes{
+	height: 500px;
+}
+
+
+.fiche-profil{
+
+	margin-bottom: 75px;
+	
+
+}
+
+
+.fiche-profil-img{ /*SUCH BEAUTY pour les profils, ca fait un conteneur qui permet de pas afficher le surplus*/
+	overflow: hidden;
+    -webkit-border-radius:150px;
+    -moz-border-radius:150px;
+    border-radius:150px;
+    box-shadow: 2px 2px 2px #656565;
+	height: 150px; 
+	width: 150px;      
+    margin-left: 20%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    > img{
+		width: 150px;
+		background-color: white;
+	}
+}
+
+.navbar-nav {
+   width: 100%;
+   text-align: center;
+   padding-left: 70px;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+}
+
+.navbar-nav{
+	margin-top: -45px;
+}
+
+.navbar .nav > li > a, .nav .open > a:focus
+{
+	color: black;
+	font-size: 18px;   
+	font-family: 'nav-font'; 
+	background: none; //avant c'était MOCHE             
+}
+
+
+.navbar .nav > li:hover > a,
+{		
+	color: white;         
+}
+
+.navbar .in,.navbar .collapsing{
+	background-color: lightgrey;
+	display: block;
+	padding-top: 50px;
+	> ul > li{
+		display: block;
+		text-align: right;
+	}
+}
+
+
+
+
+.fond{
+	margin-top: 50px;
+	z-index:-1;
+	position:fixed;
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	background-color:#2A2B47;
+	opacity:0.6;
+}
+
+
+.btn-connexion{
+	background: @btn-color;
+	text-align: center;
+	width:100%;
+	height: 50px;
+	font-size: 25px;
+	color: @second-color;
+	font-weight: bold;
+}
+
+.btn-connexion:hover{
+	box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+.carousel {
+  overflow: hidden;
+  background: white;
+
+  .item img {
+    height: 100%;
+    max-width: 40000px;
+  }
+}
+
+
+/*ANIMATIONS*/
+
+
+@keyframes retrecirLogo {
+    0%    {height: 100px;}
+    10%   {height: 95px;}
+    20%   {height: 90px;}
+    30%   {height: 85px;}
+    40%   {height: 80px;}
+    50%   {height: 75px;}
+    60%   {height: 70px;}
+    70%   {height: 65px;}
+    80%   {height: 60px;}
+    90%   {height: 55px;}
+    100%  {height: 50px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes retrecirLogo {
+    0%    {height: 100px;}
+    10%   {height: 95px;}
+    20%   {height: 90px;}
+    30%   {height: 85px;}
+    40%   {height: 80px;}
+    50%   {height: 75px;}
+    60%   {height: 70px;}
+    70%   {height: 65px;}
+    80%   {height: 60px;}
+    90%   {height: 55px;}
+    100%  {height: 50px;}
+}
+
+
+@keyframes reduireOpacite {
+    0%    {background: fadeout(@navbar-background, 100%);}
+    10%   {background: fadeout(@navbar-background, 90%);}
+    20%   {background: fadeout(@navbar-background, 80%);}
+    30%   {background: fadeout(@navbar-background, 70%);}
+    40%   {background: fadeout(@navbar-background, 60%);}
+    50%   {background: fadeout(@navbar-background, 50%);}
+    60%   {background: fadeout(@navbar-background, 40%);}
+    70%   {background: fadeout(@navbar-background, 30%);}
+    80%   {background: fadeout(@navbar-background, 20%);}
+    100%  {background: fadeout(@navbar-background, 20%);}
+
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes reduireOpacite {
+    0%    {background: fadeout(@navbar-background, 100%);}
+    10%   {background: fadeout(@navbar-background, 90%);}
+    20%   {background: fadeout(@navbar-background, 80%);}
+    30%   {background: fadeout(@navbar-background, 70%);}
+    40%   {background: fadeout(@navbar-background, 60%);}
+    50%   {background: fadeout(@navbar-background, 50%);}
+    60%   {background: fadeout(@navbar-background, 40%);}
+    70%   {background: fadeout(@navbar-background, 30%);}
+    80%   {background: fadeout(@navbar-background, 20%);}
+    100%  {background: fadeout(@navbar-background, 20%);}
+}
+

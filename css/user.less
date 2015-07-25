@@ -1,0 +1,275 @@
+@import "main-style";
+
+
+
+.navbar.user-navbar{
+	background: url("../images/triangular.png") center center fixed;/*;/*fond quand on descend*/
+    height: 80px;
+    box-shadow: 0px 5px 5px fadeout(#656565, 40%);
+}
+
+.navbar.user-navbar img{
+    height: 50px;
+}
+
+.titre-formulaire{
+	margin-top: 150px;
+	background: darken(@main-color, 10%);
+	box-shadow: 5px 5px 5px #656565;
+	font-family: 'main-font';
+	font-size: 60px;
+	color: white;
+	padding: 0 40px;
+}
+
+
+.formulaire-inscription{
+	
+	min-height: 700px;
+	margin-bottom: 300px;
+	padding: 40px;
+	box-shadow: 5px 5px 5px #656565;
+	background: @second-color;
+	padding-bottom: 100px;
+
+}
+
+.form-group > label {
+	text-align: left;
+	width: 100%;
+}
+
+
+
+
+.partie-formulaire{
+	font-family: 'main-font';
+	font-size: 50px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.form-control input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: right;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: none repeat scroll 0 0 transparent;
+    cursor: inherit;
+    display: block;
+}
+
+
+.file-preview{ //style du truc bootstrapinput 
+    margin: auto;
+    border-color: fadeout(black, 100%);
+}
+
+.gros-message-page{
+	margin-top: 300px;
+	font-size: 100px;
+	color: white;
+	text-align: center;
+
+}
+
+.photo-center{
+	margin-left: 33%;
+}
+
+
+//merci chrome de m'avoir trouvé la couille 
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+
+  background: none;
+}
+
+.photo-profil{
+	overflow: hidden;
+    -webkit-border-radius:150px;
+    -moz-border-radius:150px;
+    border-radius:150px;
+    box-shadow: 2px 2px 2px #656565;	 
+}
+
+.photo-profil.nav{
+    width: 50px;
+	margin-left: 10px;
+	display: inline-block;
+	margin-top: -18px;
+	background: none;
+
+}  
+
+
+
+
+.fenetre-messages{
+	margin-top: 125px;
+	margin-bottom: 125px;
+	background: @second-color;
+	box-shadow: 5px 5px 5px #656565;
+}
+
+.fenetre-contacts{
+	margin-top: 125px;
+	margin-bottom: 125px;
+	height: 500px;
+	overflow-x: hidden;
+	> div > .photo{
+		height: 80px;
+		width: 80px;
+		overflow: hidden;
+    	-webkit-border-radius:150px;
+   		-moz-border-radius:150px;
+   		border-radius:150px;
+    	box-shadow: 2px 2px 2px #656565;
+    	> img {
+			width: 80px;
+    	}
+	}
+}
+
+
+.contact{
+	margin: 10px 0;
+	height: 90px;
+	padding: 5px;
+	overflow:hidden;
+	border-radius: 5px;
+	>.infos-profil{
+		margin-top: -75px;
+		margin-left: 90px;
+		> p {
+			height: 18px;
+			overflow: hidden;
+		}
+	}
+	>.nb-messages{
+		margin-top: -50px;
+		margin-left: 80%;
+		width: 40px;
+		text-align: center;
+		font-family: 'nav-font';
+		color: white;
+		background-color: @main-color;
+		border-radius:8px;
+	}
+}
+.contact:hover{
+	background-color: fadeout(@second-color, 70%);
+}
+
+.contact.selected{
+	background: fadeout(@second-color, 30%);
+}
+
+
+.messages-affiche{
+	margin: 15px 0;
+	background-color: white;
+	padding: 20px 30px; 
+	border-radius: 5px;
+	border-color: @main-color;
+	border-style: solid;
+	border-width: 1px;
+	height: 500px;
+	position: relative;
+	box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+	overflow: auto;
+	> div{ 
+  		//position: absolute;
+    	//bottom: 20px;
+    	width: 100%;
+    	.pseudo{
+    		font-weight: bold;
+    	}
+    	.heure{
+    		font-style: italic;
+    		color: lightgrey;
+    		position: absolute;
+    		right: 50px;
+    	}
+    	.message{
+			padding: 0 30px;
+			width: 95%;
+    	}
+    	.anciens-messages{
+    		width: 100%;
+    		text-align: center;
+    	}
+	}
+}
+
+.messages-envoie > div {
+	>textarea{
+		height: 50px;
+		width: 100%;
+	}
+	>button {
+		height: 50px;
+		width: 100%;
+		margin-bottom: 50px;
+		> span {
+			font-family: 'nav-font'; 
+			margin-right: 50px;
+			margin-left: 20%;
+		}
+	}
+}
+
+.accueil-user{
+	margin-top: 150px;
+}
+
+
+//J'aurai du faire ça bien avant mais du coup la flemme de tout changer (encore je sais mais bon)
+.box{
+	> .titre{
+		background-color: @main-color;
+		margin: 0 -15px;
+		padding: 20px 20px;
+		font-family: 'nav-font';
+		font-size: 30px;
+		padding-left: 50px;
+		// on ratrappe les ecarts qui se mettent par defaut
+	}
+	> .contenu{
+		padding: 20px 20px;
+	}
+	margin-bottom: 50px;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #656565;
+}
+
+
+.chargement{
+	position: absolute;
+	top: 40%;
+	left: 43%;
+	-webkit-top: 40%;
+	-webkit-left: 43%;
+	width: 50px;
+}
+
+
+.choix-profil{
+	opacity: 0.5;
+}
+
+.selected{
+	opacity: 1;
+	background: fade(@second-color, 20%);
+	border-radius: 10px;
+}
+
+.fixe {
+	position: fixed;
+}

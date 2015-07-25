@@ -1,0 +1,2 @@
+#Catch 404 errors 
+ErrorDocument 404 /fonctions/404.php
